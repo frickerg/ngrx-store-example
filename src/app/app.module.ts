@@ -5,10 +5,10 @@ import { StoreModule } from '@ngrx/store';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { counterReducer } from './counter.reducer';
-import { CounterComponent } from './counter/counter.component';
-import { LoginComponent } from './login/login.component';
+import { CounterComponent } from './components/counter/counter.component';
+import { LoginComponent } from './components/login/login.component';
 import * as fromScoreboard from './reducers/scoreboard.reducer';
-import { ScoreboardComponent } from './scoreboard/scoreboard.component';
+import { ScoreboardComponent } from './components/scoreboard/scoreboard.component';
 
 @NgModule({
 	declarations: [
@@ -21,8 +21,10 @@ import { ScoreboardComponent } from './scoreboard/scoreboard.component';
 		BrowserModule,
 		AppRoutingModule,
 		StoreModule.forFeature(fromScoreboard.scoreboardFeatureKey, fromScoreboard.reducer),
-		StoreModule.forRoot({ count: counterReducer }),
-		StoreModule.forRoot({ game: fromScoreboard.reducer })
+		StoreModule.forRoot({
+			count: counterReducer,
+			game: fromScoreboard.reducer
+		})
 	],
 	providers: [],
 	bootstrap: [AppComponent]

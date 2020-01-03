@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 
-import { login } from '../actions/login.actions';
+import { login } from '../../actions/login.actions';
 
 @Component({
 	selector: 'app-login',
