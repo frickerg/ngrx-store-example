@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 
-import { login } from '../../actions/login.actions';
+import { login_old } from '../../actions/login.actions';
 
 @Component({
 	selector: 'app-login',
@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
 	}
 
 	onSubmit(username: string, password: string) {
-		this.store.dispatch(login({ username, password }));
+		this.store.dispatch(login_old({ username, password }));
 		console.log(username, password)
 		this.username = username;
 		this.password = password;
