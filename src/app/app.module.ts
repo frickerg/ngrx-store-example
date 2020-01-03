@@ -7,17 +7,22 @@ import { AppComponent } from './app.component';
 import { counterReducer } from './counter.reducer';
 import { CounterComponent } from './counter/counter.component';
 import { LoginComponent } from './login/login.component';
+import * as fromScoreboard from './reducers/scoreboard.reducer';
+import { ScoreboardComponent } from './scoreboard/scoreboard.component';
 
 @NgModule({
 	declarations: [
 		AppComponent,
 		CounterComponent,
-		LoginComponent
+		LoginComponent,
+		ScoreboardComponent
 	],
 	imports: [
 		BrowserModule,
 		AppRoutingModule,
-		StoreModule.forRoot({ count: counterReducer })
+		StoreModule.forFeature(fromScoreboard.scoreboardFeatureKey, fromScoreboard.reducer),
+		StoreModule.forRoot({ count: counterReducer }),
+		StoreModule.forRoot({ game: fromScoreboard.reducer })
 	],
 	providers: [],
 	bootstrap: [AppComponent]
