@@ -1,0 +1,6 @@
+<div class="container">
+	<h1>Actions</h1>
+	<div *ngIf="username">{{ username }}</div>
+	<div *ngIf="password">{{ password }}</div>
+	<button (click)="onSubmit('testuser', '1234')">Submit</button>
+</div>
