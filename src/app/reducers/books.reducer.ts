@@ -1,6 +1,6 @@
 import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity';
 import { createReducer, on } from '@ngrx/store';
-import { Book } from '../model/book';
+import { Book } from '../model/Book';
 import * as CollectionApiActions from '../actions/collection-api.actions';
 import * as BooksApiActions from '../actions/books-api.actions';
 import * as BookActions from '../actions/book.actions';

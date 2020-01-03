@@ -8,6 +8,10 @@ export class MoviesService {
 	constructor(private http: HttpClient) { }
 
 	getAll() {
-		return this.http.get('/movies');
+		try {
+			return this.http.get('/movies');
+		} catch {
+			error => console.log(error);
+		}
 	}
 }

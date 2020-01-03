@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { EffectsModule } from '@ngrx/effects';
@@ -22,6 +23,7 @@ import * as fromScoreboard from './reducers/scoreboard.reducer';
 		MoviesComponent
 	],
 	imports: [
+		HttpClientModule,
 		BrowserModule,
 		AppRoutingModule,
 		EffectsModule.forRoot([MovieEffects]),
